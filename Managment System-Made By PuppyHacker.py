@@ -13,7 +13,7 @@ dict_of_users={}
 def add_user():
     while True:
         print("Welcome To The User WIzard!")
-        name = input("Please Enter Your Full Name\n->")
+        name = input("Please Enter Your Username\n->")
         pay = input("Please Enter The Pay\n->")
         print("Thank You!")
         print("Wait While We Makeing The User")
@@ -38,10 +38,8 @@ def start():
     username= input("\nEnter Your UserName\n->")
     pwd=input("Enter Your Password\n->")
     if username == sec['name'] and pwd == sec['pwd']:
-        print("welcome secretary!")
         secr()
     elif username == manager['name'] and pwd == manager['pwd']:
-        print("welcome manager!")
         managerf()
     if username == "N" and pwd == "N":
         goodbye()
@@ -49,6 +47,7 @@ def start():
         print("Worng username Or password\nTry again")
         start()
 def print_all():
+    print("The Users Are: \n")
     for user in dict_of_users.keys():
         place = dict_of_users[user]
         print(Users.get_all(place))
@@ -95,7 +94,7 @@ def secr():
         start()
 def managerf():
     print("Welcome Manager!\nHere are your options")
-    c = input("1- Create or delete users\n2- watch a specific user\n3- show a avarege pay\n4- show all workers\n5- log off\n->")
+    c = input("1- Create or delete users\n2- Watch a specific user\n3- Show a avarege pay\n4- Show all workers\n5- Log off\n->")
     if c == "1":
         cr_del()
         managerf()
